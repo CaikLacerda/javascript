@@ -3,11 +3,11 @@ function GetValorAleatorioEntre(min, max) {
     return Math.floor(valor)
 }
 
-let opcao = 0
+let opcao  // Usando o Do While, o valor da variavel nao precisa ser declarado, pois o valor sera testado depois de ser rodado pelo menos uma vez
 
-while (opcao != -1) {
+do {
     opcao = GetValorAleatorioEntre(-1, 10)
     console.log(`Valor sorteado: ${opcao}.`)
-}
+} while (opcao != -1)
 
 console.log('Ate a proxima')
