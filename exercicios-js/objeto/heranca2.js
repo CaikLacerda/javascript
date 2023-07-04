@@ -12,7 +12,7 @@ const carro = {
         if(this.velAtual + delta <= this.velMax) {
             this.velAtual += delta
         } else {
-            this.velAtual = this.velMax
+                    this.velAtual = this.velMax
         }
     },
     status(){
