@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #01</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body class="conteudo exercicio">
+    <div id="primeiro">#primeiro</div>
+    <div>Segundo</div>
+    <div class="terceiro ultimo">.terceiro .ultimo</div>
+    <script>              
+        // Selecionando um elemento pelo seu Id
+        document.getElementById('primeiro').classList.add('destaque')
+
+
+        // Criando uma lista com todas as Divs do documento
+        const divs = document.getElementsByTagName('div')
+
+
+        // Transformando a lista de divs em um array
+        Array.from(divs).forEach(e => e.classList.remove('destaque'))
+
+
+        // Outra forma de transformar o HTML Collections em um array eh usando a funcao Spread
+        const divsArray = [...divs]
+
+        divsArray.forEach(e => e.classList.add('destaque'))
+
+
+        // Pegando elementos de acordo com a class
+        const ultimosElementos = document.getElementsByClassName('ultimo')
+        
+        
+        // Utilizando o FOR para percorrer o array, por ele ser um Iterator(?)
+        for(let e of ultimosElementos) {
+            e.classList.remove('destaque')
+        }
+
+    </script>
+</body>
+</html>
