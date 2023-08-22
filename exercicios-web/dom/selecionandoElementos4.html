@@ -22,7 +22,43 @@
         <p>Fim</p>
     </div>
     <script>
-        // ...
+
+        // Funcao para facilitar o console.log, usando o metodo de adicionar funcoes ao prototype
+        function log() {
+            console.log(this)
+        }
+
+        HTMLCollection.prototype.log = log
+        HTMLElement.prototype.log = log
+        NodeList.prototype.log = log
+        Node.prototype.log = log
+
+
+        // Criando uma const com o valor da div de nomes
+        const lista = document.querySelector('div ul')
+        lista.parentNode.log()
+        lista.childNodes.log() // ChildNodes traz para a lista tambem os espacos (que sao considerados texto)
+
+
+        // Para selecionar o primeiro elemento da lista
+        const primeiro = lista.firstChild
+        primeiro.log()
+        primeiro.nextSibling.log()
+
+
+        // Para selecionar o ultimo elemento da lista
+        const ultimo = lista.lastChild
+        ultimo.log()
+        ultimo.previousSibling.log()
+
+        
+        // A funcao children traz apenas os elementos definidos, ou seja nao traz os textos(espacos)
+        lista.children.log()
+        lista.firstElementChild.log()
+        lista.lastElementChild.log()
+
+        lista.parentNode.previousElementSibling.log()
+        lista.parentNode.nextElementSibling.log()
     </script>
 </body>
 
