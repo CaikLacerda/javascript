@@ -17,7 +17,29 @@
         </ul>
     </div>
     <script>
-        // ...
+        const lista = document.querySelector('#compras')
+        
+        console.log('Elemento ul')
+        console.log('childNodes', lista.childNodes)
+
+        // Para pegar o atributo destino, nao e possivel usar a notacao "."
+        console.log('Destino', lista.destino)
+
+        // Para isso eh usado o getAttribute
+        console.log('getAttribute', lista.getAttribute('destino'))
+
+        
+        // Funcao hasAttribute para mostrar se um atributo esta presente ou nao (true ou false)
+        console.log('hasAttribute', lista.hasAttribute('destino'))
+
+
+        // Podemos adicionar atributos usando a funcao setAttribute
+        lista.setAttribute('destino', 'empresa')
+        lista.setAttribute('status', 'aberto')
+
+        // Podemos tambem remover os atributos
+        lista.removeAttribute('destino')
+
     </script>
 </body>
 
