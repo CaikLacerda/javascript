@@ -9,7 +9,40 @@
 
 <body class='conteudo exercicio'>
     <script>
-        // ...
+        const body = document.querySelector('body');
+
+        // Criando uma div
+        const div1 = document.createElement('div');
+        // Adicionando uma classe
+        div1.classList.add('destaque');
+        // Adicionando o conteudo
+        div1.innerHTML = 'Primeiro';
+
+        const div2 = document.createElement('div');
+        div2.setAttribute('wm-atributo', 'valor');
+        div2.innerHTML = 'Segundo';
+
+        const p = document.createElement('p');
+        p.innerHTML = 'Terceiro';
+        const div3 = document.createElement('div');
+
+        // Adicionando o paragrafo dentro da div usando AppendChild
+
+        div3.appendChild(p) // Adiciona um elemento em ultimo lugar dentro de outro
+
+        body.appendChild(div1);
+        body.appendChild(div2);
+        body.appendChild(div3);
+
+
+        const texto = document.createTextNode('Antes...');
+
+        div3.insertBefore(texto, div3.childNodes[0]); // Para usar o insertBefore, basta indicar qual o individo filho que deseja inserir, e em qual posicao exata no elemento pai ele vai estar
+
+        const div4 = div3.cloneNode(true)
+        body.appendChild(div4)
+        body.removeChild(div3)
+        
     </script>
 </body>
 
